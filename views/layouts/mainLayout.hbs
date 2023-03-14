@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>AutoFilling</title>
+        <!-- CSS only -->
+         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"> </head>
+   <style>
+            * {
+        box-sizing: border-box;
+        }
+        body {
+        --gap: 1rem;
+        font-family: ui-sans-serif, system-ui, snas-serif;
+        }
+
+        button {
+        background-color: hsl(90, 50%, 30%);
+        border: 0;
+        color: hsl(90, 50%, 95%);
+        margin-block-start: var(--gap);
+        padding: calc(var(--gap) / 2) var(--gap);
+        }
+        button.listening {
+        background-color: hsl(0, 50%, 50%);
+        color: hsl(0, 50%, 95%);
+        }
+        code {
+        background: #333;
+        color: lime;
+        display: block;
+        padding: calc(var(--gap) / 2);
+        }
+        fieldset {
+        background: #eee;
+        border: 1px solid #bbb;
+        padding: var(--gap);
+        }
+        form {
+        margin: 0 auto;
+        max-width: 30rem;
+        }
+        input,
+        textarea {
+        border: 1px solid #bbb;
+        display: block;
+        padding: calc(var(--gap) / 2);
+        resize: vertical;
+        width: 100%;
+        }
+        label {
+        display: block;
+        font-weight: 500;
+        margin-block-start: var(--gap);
+        }
+        p {
+        font-size: small;
+        }
+
+   </style>
+    <body>
+        <div class="row">
+            <div class="container">
+                {{{body}}}
+            </div>
+        </div>
+
+
+
+        <script>
+            window.onload = function init() {
+  //Speech Recongnition
+  window.SpeechRecognition =
+    window.SpeechRecognition || window.webkitSpeechRecognition;
+  if ("SpeechRecognition" in window || "webkitSpeechRecognition" in window) {
+    let speech = {
+      enabled: true,
+      listening: false,
+      recognition: new window.SpeechRecognition(),
+      text: "",
+    };
+    speech.recognition.continuous = true;
+    speech.recognition.interimResults = true;
+    speech.recognition.lang = "en-US";
+    speech.recognition.addEventListener("result", (event) => {
+      const audio = event.results[event.results.length - 1];
+      speech.text = audio[0].transcript;
+      const tag = document.activeElement.nodeName;
+      if (tag === "INPUT" || tag === "TEXTAREA") {
+        if (audio.isFinal) {
+          document.activeElement.value += speech.text;
+        }
+      }
+      result.innerText = speech.text;
+    });
+    var toggle = document.getElementById("toggle");
+    toggle.addEventListener("click", () => {
+      speech.listening = !speech.listening;
+      if (speech.listening) {
+        toggle.classList.add("listening");
+        toggle.innerText = "Listening ...";
+        speech.recognition.start();
+      } else {
+        toggle.classList.remove("listening");
+        toggle.innerText = "Toggle listening";
+        speech.recognition.stop();
+      }
+    });
+  }
+};
+
+        </script>
+    </body>
+</html>

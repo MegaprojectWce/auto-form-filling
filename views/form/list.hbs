@@ -1,0 +1,47 @@
+<div class="container mt-5">
+
+<h3><a class="btn btn-secondary" href="/"><i class="fa fa-plus"></i> Add New</a> Submitted Responses</h3>
+<div class="table-responsive">
+<table class="table table-striped" style="width: fit-content;">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Branch</th>
+            <th>Father Name</th>
+            <th>Mother Name</th>
+            <th>Gender</th>
+            <th>Academics</th>
+            <th>Address</th>
+            <th>City</th>
+            <th>Pin Code</th>
+            <th>State</th>
+            <th>Country</th>
+            <th>Mobile</th>
+            {{!-- <th></th> --}}
+        </tr>
+    </thead>
+    <tbody>
+        {{#each list}}
+        <tr>
+            <td>{{this.name}}</td>
+            <td>{{this.branch}}</td>
+            <td>{{this.fatherName}}</td>
+            <td>{{this.motherName}}</td>
+            <td>{{this.gender}}</td>
+            <td>{{this.acadmic}}</td>
+            <td>{{this.address}}</td>
+            <td>{{this.city}}</td>
+            <td>{{this.pinCode}}</td>
+            <td>{{this.state}}</td>
+            <td>{{this.country}}</td>
+            <td>{{this.mobile}}</td>
+            <td>
+                {{!-- <a href="/{{this._id}}"><i class="fa fa-pencil fa-lg" aria-hidden="true"></i></a> --}}
+                <a href="/delete/{{this._id}}" onclick="return confirm('Are you sure to delete this record ?');"><i class="fa fa-trash fa-lg" aria-hidden="true"></i></a>
+            </td>
+        </tr>
+        {{/each}}
+    </tbody>
+</table>
+</div>
+</div>
