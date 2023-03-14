@@ -17,7 +17,7 @@ var formSchema = new mongoose.Schema({
     gender: {
         type: String
     },
-    acadmic: {
+    academics: {
         type: String
     },
     address: {

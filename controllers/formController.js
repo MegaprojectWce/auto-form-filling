@@ -10,29 +10,7 @@ router.get('/', (req, res) => {
 });
 
 router.post('/', (req, res) => {
-    if (req.body._id == '') {
-        // FormData.findOne()
-        //     .then(data => {
-        //         console.log(data);
-        //         if (data == undefined || data == null) {
-        //             insertRecord(req, res);
-        //         } else {
-        //             res.send("<script>alert('error');window.location.href='\'</script>");
-        //         }
-        //     }).catch(err => {
-        //         console.log("Error in database");
-        //     })
-        insertRecord(req, res);
-    }
-     else {
-        console.log("req.body._id: "+req.body._id)
-        updateRecord(req, res);
-    }
-
-    // if (req.body._id == '')
-    //     insertRecord(req, res);
-    // else
-    //     updateRecord(req, res);
+    insertRecord(req, res);
 });
 
 
@@ -43,7 +21,7 @@ function insertRecord(req, res) {
     data.fatherName = req.body.fatherName;
     data.motherName = req.body.motherName;
     data.gender = req.body.gender;
-    data.acadmic = req.body.acadmic;
+    data.academics = req.body.academics;
     data.address = req.body.address;
     data.city = req.body.city;
     data.pinCode = req.body.pinCode;
