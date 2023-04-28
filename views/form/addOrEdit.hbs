@@ -6,8 +6,6 @@
     justify-content: center;
 "
   >{{viewTitle}}</h3>
-  
-  
 
   {{! <button><a href="/list">View Data</a></button> }}
   <form
@@ -21,48 +19,51 @@
 
       <code id="result">live transcript here ...</code>
       <button type="button" id="toggle">Toggle listening</button>
-      <label>Name
-        <input required type="text" name="name" />
-      </label>
-      <label>Branch
-        <input required type="text" name="branch" />
-      </label>
-      <label>Gender
-        <input required type="text" name="gender" />
-      </label>
-      <label>Academic Qualification
-        <input required type="text" name="academics" />
-      </label>
-      <label>Address
-        <textarea name="address">
-        </textarea>
-      </label>
-      <label>City
-        <input required type="text" name="city" />
-      </label>
-      <label>Pin Code
-        <input
-          required
-          type="pinCode"
-          name="pinCode"
-          title="6 digit pin code "
-        />
-      </label>
+      <div class="input_fields">
+        <label>Name
+          <input required type="text" name="name"/>
+        </label>
+        <label>Branch
+          <input required type="text" name="branch" />
+        </label>
+        <label>Gender
+          <input required type="text" name="gender" />
+        </label>
+        <label>Academic Qualification
+          <input required type="text" name="academics" />
+        </label>
+        <label>Address
+          <textarea name="address">
+          </textarea>
+        </label>
+        <label>City
+          <input required type="text" name="city" />
+        </label>
+        <label>Pin Code
+          <input
+            required
+            type="pinCode"
+            name="pinCode"
+            title="6 digit pin code "
+          />
+        </label>
 
-      <label>State
-        <input required type="text" name="state" />
-      </label>
-      <label>Country
-        <input required type="text" name="country" />
-      </label>
-      <label>Mobile no.
-        <input
-          required
-          type="mobile"
-          name="mobile"
-          title="10 digit phone number "
-        />
-      </label>
+        <label>State
+          <input required type="text" name="state" />
+        </label>
+        <label>Country
+          <input required type="text" name="country" />
+        </label>
+        <label>Mobile no.
+          <input
+            required
+            type="mobile"
+            name="mobile"
+            title="10 digit phone number "
+          />
+        </label>
+      </div>
+
       <button type="submit">Submit</button>
     </fieldset>
 
