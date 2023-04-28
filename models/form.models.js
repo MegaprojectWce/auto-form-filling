@@ -8,12 +8,6 @@ var formSchema = new mongoose.Schema({
     branch: {
         type: String
     },
-    fatherName: {
-        type: String
-    },
-    motherName: {
-        type: String
-    },
     gender: {
         type: String
     },
@@ -38,8 +32,6 @@ var formSchema = new mongoose.Schema({
     mobile: {
         type: String
     },
-    
-
 }); 
 
 mongoose.model('formData',formSchema);  // (name of schema, schema Object)

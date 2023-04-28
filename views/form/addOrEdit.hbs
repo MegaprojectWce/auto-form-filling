@@ -1,74 +1,72 @@
 <div class="container mt-1">
 
-    <h3
-        style="
+  <h3
+    style="
     display: flex;
     justify-content: center;
 "
-    >{{viewTitle}}</h3>
+  >{{viewTitle}}</h3>
 
-    
-{{!-- <button><a href="/list">View Data</a></button> --}}
-<form action="/" method="POST" autocomplete="off" onsubmit="alert('Form submitted succesfully')">
- <input type="hidden" name="_id" value="{{employee._id}}">
- <fieldset>
+  {{! <button><a href="/list">View Data</a></button> }}
+  <form
+    action="/"
+    method="POST"
+    autocomplete="off"
+    onsubmit="alert('Form submitted succesfully')"
+  >
+    <input type="hidden" name="_id" value="{{employee._id}}" />
+    <fieldset>
 
       <code id="result">live transcript here ...</code>
       <button type="button" id="toggle">Toggle listening</button>
       <label>Name
-        <input required type="text" name="name">
+        <input required type="text" name="name" />
       </label>
       <label>Branch
-        <input required type="text" name="branch">
-      </label>
-      <label>Father's Name
-        <input required type="text" name="fatherName">
-
-      </label>
-      <label>Mother's Name
-        <input required type="text" name="motherName">
+        <input required type="text" name="branch" />
       </label>
       <label>Gender
-        <input required type="text" name="gender">
-
+        <input required type="text" name="gender" />
       </label>
       <label>Academic Qualification
-
-        <input required type="text" name="academics">
-
+        <input required type="text" name="academics" />
       </label>
       <label>Address
         <textarea name="address">
-      </textarea>
+        </textarea>
       </label>
       <label>City
-        <input required type="text" name="city">
+        <input required type="text" name="city" />
       </label>
-
       <label>Pin Code
-        <input required type="pinCode" name="pinCode" title="6 digit pin code ">
-
+        <input
+          required
+          type="pinCode"
+          name="pinCode"
+          title="6 digit pin code "
+        />
       </label>
 
       <label>State
-        <input required type="text" name="state">
+        <input required type="text" name="state" />
       </label>
       <label>Country
-        <input required type="text" name="country">
+        <input required type="text" name="country" />
       </label>
       <label>Mobile no.
-        <input required type="mobile" name="mobile" title="10 digit phone number ">
+        <input
+          required
+          type="mobile"
+          name="mobile"
+          title="10 digit phone number "
+        />
       </label>
       <button type="submit">Submit</button>
     </fieldset>
-   
 
-    
-    {{!-- <div class="form-group">
+    {{! <div class="form-group">
         <button type="submit" class="btn btn-info"><i class="fa fa-database"></i> Submit</button>
         <a class="btn btn-secondary" href="/list"><i class="fa fa-list-alt"></i> View All</a>
-    </div> --}}
-</form>
+    </div> }}
+  </form>
 </div>
-
-
