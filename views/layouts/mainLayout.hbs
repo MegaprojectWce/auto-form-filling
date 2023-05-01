@@ -1,3 +1,6 @@
+Main Layout
+
+
 <html>
   <head>
     <title>AutoFilling</title>
@@ -37,59 +40,37 @@
 <script>
   const fieldDelay = 7000;
   let currentFieldIndex = 0;
-  const formFields = [
+  const myForm = document.getElementById("form");
+  const formFields = myForm.querySelectorAll("input, textarea");
+
+  console.log(formFields);
+
+  {{!-- const formFields = [
   
+  { name: "name", label: "Enter your Name" },
   { name: "branch", label: "Enter your branch" },
-  { name: "gender", label: "Enter your gender" },
-   { name: "acadamics", label: "Enter your acadamics" },
-    { name: "address", label: "Enter your address " },
+  { name: "mobile", label: "Enter your mobile" },
   // Add more fields as needed
-];
-    var toggle = document.getElementById("toggle");
+]; --}}
+var toggle = document.getElementById("toggle");
 
 toggle.addEventListener("click", () => {
 
-
-
-
-
-
-
-{{!-- function input_voice(fieldName) {
-  console.log(`Input voice: ${fieldName}`);
-  
-  // Move to the next field (if there is one)
-
-
-
-
-
-  if (currentFieldIndex < formFields.length) {
-    // Wait for the specified delay, then call the output_voice function for the next field
-    setTimeout(() => {
-    output_voice(formFields[currentFieldIndex].label);
-    input_voice(formFields[currentFieldIndex].name);
-    }, fieldDelay);
-  } else {
-    // All fields have been filled, do something else (e.g. submit the form)
-    console.log("Form submitted");
-  }
-} --}}
-
 // Call the output_voice function for the first field
-output_voice(formFields[currentFieldIndex].label);
+output_voice("Enter your" + formFields[currentFieldIndex].getAttribute("name"));
 
 // Wait for the specified delay, then call the input_voice function for the first field
 setTimeout(() => {
-  input_voice(formFields[currentFieldIndex].name);
+  input_voice(formFields[currentFieldIndex].getAttribute("name"));
   console.log("Calling recursion")
-}, fieldDelay);
+}, 7000);
    
  
 });
 
 
   function output_voice(message) {
+   
     const speech = new SpeechSynthesisUtterance();
     speech.text = message;
     speech.volume = 1;
@@ -100,9 +81,14 @@ setTimeout(() => {
 
   function input_voice(fieldName) {
    console.log(`Input voice: ${fieldName}`);
-   const myInput = document.querySelector(`input[name=${fieldName}]`);
+   let myInput = document.querySelector(`input[name=${fieldName}]`);
+   if(myInput==null){
+    console.log("Myinput is NULL");
+     myInput = document.querySelector(`textarea[name=${fieldName}]`);
+   }
     console.log("myInput "+myInput);
-   myInput.setAttribute("autofocus", true);
+ 
+   myInput.focus();
 
    currentFieldIndex++;
     window.SpeechRecognition =
@@ -124,7 +110,8 @@ setTimeout(() => {
       speech.recognition.addEventListener("result", (event) => {
         const audio = event.results[event.results.length - 1];
         speech.text = audio[0].transcript;
-        const tag = document.activeElement;
+        const tag = document.activeElement.nodeName;
+     
         console.log("tag is " + tag);
         if (tag === "INPUT" || tag === "TEXTAREA") {
           if (audio.isFinal) {
@@ -132,6 +119,7 @@ setTimeout(() => {
           }
         }
         result.innerText = speech.text;
+        myInput.innerText = speech.text;
       });
       
       speech.listening = !speech.listening;
@@ -149,14 +137,42 @@ setTimeout(() => {
     //wait for the next input...
     if (currentFieldIndex < formFields.length) {
     setTimeout(() => {
-    output_voice(formFields[currentFieldIndex].label);
-    input_voice(formFields[currentFieldIndex].name);
-    }, fieldDelay);
-  } else {
-    // All fields have been filled, do something else (e.g. submit the form)
-    console.log("Form submitted");
-  }
+      output_voice("Enter your"+formFields[currentFieldIndex].getAttribute("name"));
+        
+       setTimeout(()=>{
+        input_voice(formFields[currentFieldIndex].getAttribute("name"));
 
+        },1000)
+    }, fieldDelay);
+   
+  }
+   else {
+   
+    setTimeout(()=>{
+      console.log("Calling the else settimeout")
+      const activeElement = document.activeElement;
+      if(activeElement === myInput) {
+        console.log("Blurring the value")
+        myInput.blur();
+      }
+
+        output_voice("Do you want to submit your form");
+        console.log("Callng the event listnet")
+        speech.recognition.addEventListener("result", (event) => {
+        const audio = event.results[event.results.length - 1];
+        speech.text = audio[0].transcript;
+        console.log("Printin value "+speech.text);
+
+      });
+      
+        toggle.classList.remove("listening");
+        toggle.innerText = "Toggle listening";
+        speech.recognition.stop();
+        console.log("Form submitted");
+
+    },3*fieldDelay)
+    
+  }
 
 
     }
