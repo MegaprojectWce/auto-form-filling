@@ -5,7 +5,7 @@ const FormData = mongoose.model('formData');
 
 router.get('/', (req, res) => {
     res.render("form/addOrEdit", {
-        viewTitle: "Insert Record"
+        viewTitle: "Admission Form"
     });
 });
 
@@ -36,7 +36,7 @@ function insertRecord(req, res) {
             if (err.name == 'ValidationError') {
                 handleValidationError(err, req.body);
                 res.render("form/addOrEdit", {
-                    viewTitle: "Insert Employee",
+                    viewTitle: "Admission Form",
                     data: req.body
                 });
             }
@@ -53,7 +53,7 @@ function updateRecord(req, res) {
             if (err.name == 'ValidationError') {
                 handleValidationError(err, req.body);
                 res.render("form/addOrEdit", {
-                    viewTitle: 'Insert Record',
+                    viewTitle: 'Admission Form',
                     employee: req.body
                 });
             }

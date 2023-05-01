@@ -1,6 +1,3 @@
-Main Layout
-
-
 <html>
   <head>
     <title>AutoFilling</title>
@@ -15,19 +12,71 @@ Main Layout
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
     />
+    {{!-- <link rel="stylesheet" href="main.css"> --}}
   </head>
   <style>
-    * { box-sizing: border-box; } body { --gap: 1rem; font-family:
-    ui-sans-serif, system-ui, snas-serif; } button { background-color: hsl(90,
-    50%, 30%); border: 0; color: hsl(90, 50%, 95%); margin-block-start:
-    var(--gap); padding: calc(var(--gap) / 2) var(--gap); } button.listening {
-    background-color: hsl(0, 50%, 50%); color: hsl(0, 50%, 95%); } code {
-    background: #333; color: lime; display: block; padding: calc(var(--gap) /
-    2); } fieldset { background: #eee; border: 1px solid #bbb; padding:
-    var(--gap); } form { margin: 0 auto; max-width: 30rem; } input, textarea {
-    border: 1px solid #bbb; display: block; padding: calc(var(--gap) / 2);
-    resize: vertical; width: 100%; } label { display: block; font-weight: 500;
-    margin-block-start: var(--gap); } p { font-size: small; }
+    * {
+	box-sizing: border-box;
+}
+
+body {
+	--gap: 1rem;
+	font-family:
+		ui-sans-serif, system-ui, snas-serif;
+}
+
+button {
+	background-color: hsl(90,
+			50%, 30%);
+	border: 0;
+	color: hsl(90, 50%, 95%);
+	margin-block-start:
+		var(--gap);
+	padding: calc(var(--gap) / 2) var(--gap);
+}
+
+button.listening {
+	background-color: hsl(0, 50%, 50%);
+	color: hsl(0, 50%, 95%);
+}
+
+code {
+	background: #333;
+	color: lime;
+	display: block;
+	padding: calc(var(--gap) / 2);
+}
+
+fieldset {
+	background: #eee;
+	border: 1px solid #bbb;
+	padding:
+		var(--gap);
+}
+
+form {
+	margin: 0 auto;
+	max-width: 30rem;
+}
+
+input,
+textarea {
+	border: 1px solid #bbb;
+	display: block;
+	padding: calc(var(--gap) / 2);
+	resize: vertical;
+	width: 100%;
+}
+
+label {
+	display: block;
+	font-weight: 500;
+	margin-block-start: var(--gap);
+}
+
+p {
+	font-size: small;
+}
 
   </style>
   <body>
@@ -39,7 +88,7 @@ Main Layout
 
 <script>
   const fieldDelay = 7000;
-  let currentFieldIndex = 0;
+  let currentFieldIndex = 1;
   const myForm = document.getElementById("form");
   const formFields = myForm.querySelectorAll("input, textarea");
 
