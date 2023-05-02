@@ -196,7 +196,7 @@ function input_voice(fieldName) {
         } //wait for the next input...
             if (currentFieldIndex < formFields.length) {
                 setTimeout(() => {
-                        output_voice("Enter your "+formFields[currentFieldIndex].getAttribute("name "));
+                        output_voice("Enter your "+formFields[currentFieldIndex].getAttribute("name"));
                             setTimeout(() => {
                                 input_voice(formFields[currentFieldIndex].getAttribute("name"));
                             }, 1000)
