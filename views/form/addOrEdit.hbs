@@ -1,11 +1,14 @@
+
+
+
 <div class="container mt-1">
 
-  <h3
+  {{!-- <h3
     style="
     display: flex;
     justify-content: center;
-"
-  >{{viewTitle}}</h3>
+" --}}
+  {{!-- >{{viewTitle}}</h3> --}}
 
   {{! <button><a href="/list">View Data</a></button> }}
   <form
@@ -16,11 +19,10 @@
     id="form"
     class="mt-3"
   >
-    <input type="hidden" name="_id" value="{{employee._id}}" />
-    <fieldset>
-
+    {{!-- <input type="hidden" name="_id" value="{{employee._id}}" /> --}}
       <code id="result">live transcript here ...</code>
-      <button type="button" id="toggle">Toggle listening</button>
+      {{!-- <button type="button" id="toggle">Toggle listening</button> --}}
+    <fieldset style="margin-top: 7rem;">
       <div class="input_fields">
          <h3 class="mt-3">Personal Details</h3>
         <label>Name

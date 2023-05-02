@@ -12,227 +12,243 @@
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
     />
-    {{!-- <link rel="stylesheet" href="main.css"> --}}
+    {{! <link rel="stylesheet" href="main.css"> }}
   </head>
   <style>
-    * {
-	box-sizing: border-box;
-}
+    * { box-sizing: border-box; } body { --gap: 1rem; font-family:
+    ui-sans-serif, system-ui, snas-serif; } button { background-color: hsl(90,
+    50%, 30%); border: 0; color: hsl(90, 50%, 95%); margin-block-start:
+    var(--gap); padding: calc(var(--gap) / 2) var(--gap); } button.listening {
+    background-color: hsl(0, 50%, 50%); color: hsl(0, 50%, 95%); } code {
+    background: #333; color: lime; display: block; padding: calc(var(--gap) /
+    2);    top: 70px;
+    position: fixed;
+    z-index: 5;width: 52vw;margin-bottom: 2rem; } fieldset { background: #eee; border: 1px solid #bbb; padding:
+    var(--gap); } form { margin: 0 auto; max-width: 50rem; } input, textarea {
+    border: 1px solid #bbb; display: block; padding: calc(var(--gap) / 2);
+    resize: vertical; width: 100%; } label { display: block; font-weight: 500;
+    margin-block-start: var(--gap); } p { font-size: small; }
 
-body {
-	--gap: 1rem;
-	font-family:
-		ui-sans-serif, system-ui, snas-serif;
-}
-
-button {
-	background-color: hsl(90,
-			50%, 30%);
-	border: 0;
-	color: hsl(90, 50%, 95%);
-	margin-block-start:
-		var(--gap);
-	padding: calc(var(--gap) / 2) var(--gap);
-}
-
-button.listening {
-	background-color: hsl(0, 50%, 50%);
-	color: hsl(0, 50%, 95%);
-}
-
-code {
-	background: #333;
-	color: lime;
-	display: block;
-	padding: calc(var(--gap) / 2);
-}
-
-fieldset {
-	background: #eee;
-	border: 1px solid #bbb;
-	padding:
-		var(--gap);
-}
-
-form {
-	margin: 0 auto;
-	max-width: 50rem;
-}
-
-input,
-textarea {
-	border: 1px solid #bbb;
-	display: block;
-	padding: calc(var(--gap) / 2);
-	resize: vertical;
-	width: 100%;
-}
-
-label {
-	display: block;
-	font-weight: 500;
-	margin-block-start: var(--gap);
-}
-
-p {
-	font-size: small;
-}
 
   </style>
-  <body>
+  <body class="pt-5">
+    <div class="navigationBar">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container-fluid">
+          <a class="navbar-brand w-80 text-center" href="#">Admission Form</a>
+          <button class="btn btn-outline-success my-2 my-sm-0"
+                type="submit" id="toggle">Toggle listening</button>
+          {{!-- <button
+            class="navbar-toggler"
+            type="button"
+            data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button> --}}
+          {{!-- <button
+                class="btn btn-outline-success my-2 my-sm-0"
+                type="submit"
+              >Toggle</button> --}}
+          {{!-- <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+              <li class="nav-item active">
+                <a class="nav-link" href="#">Home
+                  <span class="sr-only">(current)</span></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Link</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a
+                  class="nav-link dropdown-toggle"
+                  href="#"
+                  id="navbarDropdown"
+                  role="button"
+                  data-toggle="dropdown"
+                  aria-haspopup="true"
+                  aria-expanded="false"
+                >
+                  Dropdown
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <a class="dropdown-item" href="#">Action</a>
+                  <a class="dropdown-item" href="#">Another action</a>
+                  <div class="dropdown-divider"></div>
+                  <a class="dropdown-item" href="#">Something else here</a>
+                </div>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link disabled" href="#">Disabled</a>
+              </li>
+            </ul>
+            <form class="form-inline my-2 my-lg-0">
+              <input
+                class="form-control mr-sm-2"
+                type="search"
+                placeholder="Search"
+                aria-label="Search"
+              />
+              <button
+                class="btn btn-outline-success my-2 my-sm-0"
+                type="submit"
+              >Search</button>
+            </form>
+          </div> --}}
+        </div>
+      </nav>
+
+    </div>
     <div class="row">
+
       <div class="container">
         {{{body}}}
       </div>
     </div>
 
-<script>
-  const fieldDelay = 7000;
-  let currentFieldIndex = 14;
-  const myForm = document.getElementById("form");
-  const formFields = myForm.querySelectorAll("input, textarea");
+    <script>
+      const fieldDelay = 7000; let currentFieldIndex = 14; const myForm =
+      document.getElementById("form"); const formFields =
+      myForm.querySelectorAll("input, textarea"); console.log(formFields);
 
-  console.log(formFields);
-
-  {{!-- const formFields = [
+      {{! const formFields = [
   
   { name: "name", label: "Enter your Name" },
   { name: "branch", label: "Enter your branch" },
   { name: "mobile", label: "Enter your mobile" },
   // Add more fields as needed
-]; --}}
-var toggle = document.getElementById("toggle");
-
-toggle.addEventListener("click", () => {
-
-// Call the output_voice function for the first field
-output_voice("Enter your" + formFields[currentFieldIndex].getAttribute("name"));
-
-// Wait for the specified delay, then call the input_voice function for the first field
-setTimeout(() => {
-  input_voice(formFields[currentFieldIndex].getAttribute("name"));
-  console.log("Calling recursion")
-}, 4000);
+]; }}
+    var toggle = document.getElementById("toggle");
+toggle.addEventListener("click", () => { // Call the output_voice function for the first field 
    
- 
+    output_voice("Enter your" +
+        formFields[currentFieldIndex].getAttribute("name")); // Wait for the specified delay, then call the input_voice function  for the first field
+
+    setTimeout(() => {
+        input_voice(formFields[currentFieldIndex].getAttribute("name"));
+        console.log("Calling recursion")
+    }, 4000);
 });
 
-
-  function output_voice(message) {
-   
+function
+output_voice(message) {
     const speech = new SpeechSynthesisUtterance();
     speech.text = message;
     speech.volume = 1;
     speech.rate = 1;
     speech.pitch = 1;
     window.speechSynthesis.speak(speech);
-  }
+}
 
-  function input_voice(fieldName) {
-   console.log(`Input voice: ${fieldName}`);
-   let myInput = document.querySelector(`input[name=${fieldName}]`);
-   if(myInput==null){
-    console.log("Myinput is NULL");
-     myInput = document.querySelector(`textarea[name=${fieldName}]`);
-   }
-    console.log("myInput "+myInput);
- 
-   myInput.focus();
-
-   currentFieldIndex++;
-    window.SpeechRecognition =
-      window.SpeechRecognition || window.webkitSpeechRecognition;
-    if ("SpeechRecognition" in window || "webkitSpeechRecognition" in window) {
-      let speech = {
-        enabled: true,
-        listening: false,
-        recognition: new window.SpeechRecognition(),
-        text: "",
-      };
-      speech.recognition.continuous = true;
-      speech.recognition.interimResults = true;
-      speech.recognition.lang = "en-US";
-
-    //Proces the current text value.
-    console.log("Processing the current value man!1!")
-  
-      speech.recognition.addEventListener("result", (event) => {
-        const audio = event.results[event.results.length - 1];
-        speech.text = audio[0].transcript;
-        const tag = document.activeElement.nodeName;
-     
-        console.log("tag is " + tag);
-        if (tag === "INPUT" || tag === "TEXTAREA") {
-          if (audio.isFinal) {
-            document.activeElement.value += speech.text;
-          }
-        }
-        result.innerText = speech.text;
-        myInput.innerText = speech.text;
-      });
-      
-      speech.listening = !speech.listening;
-      if (speech.listening) {
-        toggle.classList.add("listening");
-        toggle.innerText = "Listening ...";
-        speech.recognition.start();
-      } else {
-        toggle.classList.remove("listening");
-        toggle.innerText = "Toggle listening";
-        speech.recognition.stop();
-      }
-
-
-    //wait for the next input...
-    if (currentFieldIndex < formFields.length) {
-    setTimeout(() => {
-      output_voice("Enter your"+formFields[currentFieldIndex].getAttribute("name"));
-        
-       setTimeout(()=>{
-        input_voice(formFields[currentFieldIndex].getAttribute("name"));
-
-        },1000)
-    }, fieldDelay);
-   
-  }
-   else {
-   
-    setTimeout(()=>{
-      console.log("Calling the else settimeout")
-      const activeElement = document.activeElement;
-      if(activeElement === myInput) {
-        console.log("Blurring the value")
-        myInput.blur();
-      }
-
-        output_voice("Do you want to submit your form");
-        console.log("Callng the event listnet")
-        speech.recognition.addEventListener("result", (event) => {
-        const audio = event.results[event.results.length - 1];
-        speech.text = audio[0].transcript;
-        console.log("Printin value "+speech.text);
-
-      });
-      
-        toggle.classList.remove("listening");
-        toggle.innerText = "Toggle listening";
-        speech.recognition.stop();
-        console.log("Form submitted");
-
-    },3*fieldDelay)
-    
-  }
-
-
+function input_voice(fieldName) {
+    console.log(`Input voice: ${fieldName}`);
+    let myInput =
+        document.querySelector(`input[name=${fieldName}]`);
+    if (myInput == null) {
+        console.log("Myinput is NULL");
+        myInput =
+            document.querySelector(`textarea[name=${fieldName}]`);
     }
-  }
-
+    console.log("myInput " + myInput);
+    myInput.focus();
+    currentFieldIndex++;
+    window.SpeechRecognition = window.SpeechRecognition ||
+        window.webkitSpeechRecognition;
+    if ("SpeechRecognition" in window ||
+        "webkitSpeechRecognition" in window) {
+        let speech = {
+            enabled: true,
+            listening: false,
+            recognition: new window.SpeechRecognition(),
+            text: "",
+        };
+        speech.recognition.continuous = true;
+        speech.recognition.interimResults = true;
+        speech.recognition.lang = "en-US"; //Proces the current text value.
+        console.log("Processing the current value man!1!")
+        speech.recognition.addEventListener("result", (event) => {
+            const audio =
+                event.results[event.results.length - 1];
+            speech.text =
+                audio[0].transcript;
+            const tag = document.activeElement.nodeName;
+            console.log("tag is " + tag);
+            if (tag === "INPUT" || tag === "TEXTAREA") {
+                if (audio.isFinal) {
+                    document.activeElement.value += speech.text;
+                }
+            }
+            result.innerText = speech.text;
+            myInput.innerText = speech.text;
+        });
+        speech.listening = !speech.listening;
+        if (speech.listening) {
+            toggle.classList.add("listening");
+            toggle.innerText = "Listening ...";
+            speech.recognition.start();
+        } else {
+            toggle.classList.remove("listening");
+            toggle.innerText = "Toggle listening";
+            speech.recognition.stop();
+        } //wait for the next input...
+            if (currentFieldIndex < formFields.length) {
+                setTimeout(() => {
+                        output_voice("Enter your "+formFields[currentFieldIndex].getAttribute("name "));
+                            setTimeout(() => {
+                                input_voice(formFields[currentFieldIndex].getAttribute("name"));
+                            }, 1000)
+                        }, fieldDelay);
+                }
+                else {
+                    setTimeout(() => {
+                            console.log("Calling the else settimeout ") 
+                            
+                            const activeElement = document.activeElement;
+                                if (activeElement === myInput) {
+                                    console.log("Blurring the value")
+                                    myInput.blur();
+                                }
+                                //output_voice(" Your Form is submitting");
+                                output_voice("Form submitted successfully");
+                                myForm.submit();
+                                 /*console.log("Callng the event listnet") 
+                                  toggle.classList.add("listening");
+                                  toggle.innerText = "Listening ...";
+                                  //speech.recognition.start();
+                                 speech.recognition.addEventListener("result", (event) => {
+                                    const audio = event.results[event.results.length - 1];
+                                    speech.text = audio[0].transcript;
+                                    console.log("Printing value " + speech.text);
+                                });
+                                 toggle.classList.remove("listening"); 
+                                 toggle.innerText = "Toggle listening ";
+                                  speech.recognition.stop(); */
+                                  console.log("Form submitted ");
+                            }, 2*fieldDelay)
+                    }
+                }
+            }
     </script>
-     <!-- Optional JavaScript -->
+    <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-  
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"
+    ></script>
+
   </body>
 </html>
