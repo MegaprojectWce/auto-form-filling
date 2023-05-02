@@ -17,20 +17,23 @@ router.post('/', (req, res) => {
 function insertRecord(req, res) {
     var data = new FormData();
     data.name = req.body.name;
-    data.branch = req.body.branch;
-    data.fatherName = req.body.fatherName;
-    data.motherName = req.body.motherName;
+    data.email = req.body.email;
+    data.mobile = req.body.mobile;
     data.gender = req.body.gender;
-    data.academics = req.body.academics;
+    data.birthDate = req.body.birthdate;
     data.address = req.body.address;
     data.city = req.body.city;
     data.pinCode = req.body.pinCode;
     data.state = req.body.state;
     data.country = req.body.country;
-    data.mobile = req.body.mobile;
+    data.twelthPercentage = req.body.twelthPercentage;
+    data.mhtCetPercentile = req.body.mhtCetPercentile;
+    data.branchPreferance1 = req.body.branchPreferance1;
+    data.branchPreferance2 = req.body.branchPreferance2;
+    data.branchPreferance3 = req.body.branchPreferance3;
     data.save()
         .then(data => {
-            // console.log(data);
+            console.log(data);
             res.redirect('/');
         }).catch(err => {
             if (err.name == 'ValidationError') {
@@ -42,7 +45,7 @@ function insertRecord(req, res) {
             }
             else
                 console.log('Error during record insertion : ' + err);
-        }
+            }
         );
 }
 

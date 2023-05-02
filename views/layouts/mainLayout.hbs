@@ -15,8 +15,14 @@
     {{! <link rel="stylesheet" href="main.css"> }}
   </head>
   <style>
-    * { box-sizing: border-box; } body { --gap: 1rem; font-family:
-    ui-sans-serif, system-ui, snas-serif; } button { background-color: hsl(90,
+    * { box-sizing: border-box;} 
+    body { 
+      --gap: 1rem; 
+      font-family:ui-sans-serif, system-ui, sans-serif;
+    background-color: #096dd9;
+  
+      }
+     button { background-color: hsl(90,
     50%, 30%); border: 0; color: hsl(90, 50%, 95%); margin-block-start:
     var(--gap); padding: calc(var(--gap) / 2) var(--gap); } button.listening {
     background-color: hsl(0, 50%, 50%); color: hsl(0, 50%, 95%); } code {
@@ -32,6 +38,7 @@
 
   </style>
   <body class="pt-5">
+   
     <div class="navigationBar">
       <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
         <div class="container-fluid">
@@ -110,19 +117,12 @@
     </div>
 
     <script>
-      const fieldDelay = 7000; let currentFieldIndex = 0;
+      const fieldDelay = 7000; let currentFieldIndex = 8;
        const myForm = document.getElementById("form"); 
-       const formFields = myForm.querySelectorAll("input, textarea"); console.log(formFields);
-
-      /* const formFields = [
-  
-  { name: "name", label: "Enter your Name" },
-  { name: "branch", label: "Enter your branch" },
-  { name: "mobile", label: "Enter your mobile" },
-  // Add more fields as needed
-]; */
+       const formFields = myForm.querySelectorAll("input, textarea");
+        console.log(formFields);
     var toggle = document.getElementById("toggle");
-toggle.addEventListener("click", () => { // Call the output_voice function for the first field 
+    toggle.addEventListener("click", () => { // Call the output_voice function for the first field 
    
     output_voice("Enter your" +
         formFields[currentFieldIndex].getAttribute("name")); // Wait for the specified delay, then call the input_voice function  for the first field
@@ -212,7 +212,7 @@ function input_voice(fieldName) {
                                     myInput.blur();
                                 }
                                 //output_voice(" Your Form is submitting");
-                                output_voice("Form submitted successfully");
+                                output_voice("Form submitted successfully");                   
                                 myForm.submit();
                                  /*console.log("Callng the event listnet") 
                                   toggle.classList.add("listening");

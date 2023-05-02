@@ -6,15 +6,20 @@
     <thead>
         <tr>
             <th>Name</th>
-            <th>Branch</th>
+            <th>Email</th>
+            <th>Mobile No.</th>
+            <th>Birth Date</th>
             <th>Gender</th>
-            <th>Academics</th>
             <th>Address</th>
             <th>City</th>
             <th>Pin Code</th>
             <th>State</th>
             <th>Country</th>
-            <th>Mobile</th>
+            <th>12th Percentage</th>
+            <th>MHT-CET Percentile</th>
+            <th>Branch preferance 1</th>
+            <th>Branch preferance 2</th>
+            <th>Branch preferance 3</th>
             {{!-- <th></th> --}}
         </tr>
     </thead>
@@ -22,15 +27,20 @@
         {{#each list}}
         <tr>
             <td>{{this.name}}</td>
-            <td>{{this.branch}}</td>
+            <td>{{this.email}}</td>
+            <td>{{this.mobile}}</td>
+            <td>{{this.birth-date}}</td>
             <td>{{this.gender}}</td>
-            <td>{{this.academics}}</td>
             <td>{{this.address}}</td>
             <td>{{this.city}}</td>
             <td>{{this.pinCode}}</td>
             <td>{{this.state}}</td>
             <td>{{this.country}}</td>
-            <td>{{this.mobile}}</td>
+            <td>{{this.twelthPercentage}}</td>
+            <td>{{this.mhtCetPercentile}}</td>
+            <td>{{this.branchPreferance1}}</td>
+            <td>{{this.branchPreferance2}}</td>
+            <td>{{this.branchPreferance3}}</td>
             <td>
                 {{!-- <a href="/{{this._id}}"><i class="fa fa-pencil fa-lg" aria-hidden="true"></i></a> --}}
                 <a href="/delete/{{this._id}}" onclick="return confirm('Are you sure to delete this record ?');"><i class="fa fa-trash fa-lg" aria-hidden="true"></i></a>
