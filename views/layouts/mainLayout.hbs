@@ -110,17 +110,17 @@
     </div>
 
     <script>
-      const fieldDelay = 7000; let currentFieldIndex = 14; const myForm =
-      document.getElementById("form"); const formFields =
-      myForm.querySelectorAll("input, textarea"); console.log(formFields);
+      const fieldDelay = 7000; let currentFieldIndex = 0;
+       const myForm = document.getElementById("form"); 
+       const formFields = myForm.querySelectorAll("input, textarea"); console.log(formFields);
 
-      {{! const formFields = [
+      /* const formFields = [
   
   { name: "name", label: "Enter your Name" },
   { name: "branch", label: "Enter your branch" },
   { name: "mobile", label: "Enter your mobile" },
   // Add more fields as needed
-]; }}
+]; */
     var toggle = document.getElementById("toggle");
 toggle.addEventListener("click", () => { // Call the output_voice function for the first field 
    
