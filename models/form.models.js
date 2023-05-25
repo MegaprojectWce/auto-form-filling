@@ -4,46 +4,61 @@ var formSchema = new mongoose.Schema({
   name: {
     type: String,
   },
-  email: {
-    type: String,
-  },
-  mobile: {
-    type: String,
-  },
   gender: {
     type: String,
   },
   birthDate: {
     type: String,
   },
+  fathername: {
+    type: String,
+  },
+  mothername: {
+    type: String,
+  },
+  minority: {
+    type: String,
+  },
+  email: {
+    type: String,
+  },
+  mobile: {
+    type: String,
+  },
+  nationality: {
+    type: String,
+  },
+  maritalstatus: {
+    type: String,
+  },
+  community: {
+    type: String,
+  },
   address: {
     type: String,
   },
-  city: {
+  education: {
     type: String,
   },
-  pinCode: {
+  graduation: {
     type: String,
   },
-  state: {
+  graduationpercentage: {
     type: String,
   },
-  country: {
+  examination: {
     type: String,
   },
-  twelthPercentage: {
+  attempts: {
     type: String,
   },
-  mhtCetPercentile: {
+  onetofive: {
     type: String,
   },
-  branchPreferance1: {
+  sixandseven: {
     type: String,
   },
-  branchPreferance2: {
-    type: String,
-  },
-  branchPreferance3: {
+  apradesh: {
     type: String,
   },
 });

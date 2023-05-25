@@ -15,22 +15,23 @@ router.post('/', (req, res) => {
 
 
 function insertRecord(req, res) {
-    var data = new FormData();
-    data.name = req.body.name;
-    data.email = req.body.email;
-    data.mobile = req.body.mobile;
-    data.gender = req.body.gender;
-    data.birthDate = req.body.birthdate;
-    data.address = req.body.address;
-    data.city = req.body.city;
-    data.pinCode = req.body.pinCode;
-    data.state = req.body.state;
-    data.country = req.body.country;
-    data.twelthPercentage = req.body.twelthPercentage;
-    data.mhtCetPercentile = req.body.mhtCetPercentile;
-    data.branchPreferance1 = req.body.branchPreferance1;
-    data.branchPreferance2 = req.body.branchPreferance2;
-    data.branchPreferance3 = req.body.branchPreferance3;
+    var data = new FormData(req.body);
+    console.log(req.body);
+    // data.name = req.body.name;
+    // data.email = req.body.email;
+    // data.mobile = req.body.mobile;
+    // data.gender = req.body.gender;
+    // data.birthDate = req.body.birthdate;
+    // data.address = req.body.address;
+    // data.city = req.body.city;
+    // data.pinCode = req.body.pinCode;
+    // data.state = req.body.state;
+    // data.country = req.body.country;
+    // data.twelthPercentage = req.body.twelthPercentage;
+    // data.mhtCetPercentile = req.body.mhtCetPercentile;
+    // data.branchPreferance1 = req.body.branchPreferance1;
+    // data.branchPreferance2 = req.body.branchPreferance2;
+    // data.branchPreferance3 = req.body.branchPreferance3;
     data.save()
         .then(data => {
             console.log(data);
