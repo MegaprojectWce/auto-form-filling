@@ -19,7 +19,7 @@
     body { 
       --gap: 1rem; 
       font-family:ui-sans-serif, system-ui, sans-serif;
-    background-color: #096dd9;
+        background-color: #c7b3b3;;
   
       }
      button { background-color: hsl(90,
@@ -159,7 +159,7 @@ function input_voice(fieldName) {
     myInput.style.border = '5px solid green';
     myInput.addEventListener('blur', function() {
       this.style.border = 'none';
-    });   
+    });
     currentFieldIndex++;
     window.SpeechRecognition = window.SpeechRecognition ||
         window.webkitSpeechRecognition;
@@ -186,6 +186,10 @@ function input_voice(fieldName) {
                 if (audio.isFinal) {
                     document.activeElement.value += speech.text;
                 }
+              console.log("SPeech.text" + speech.text)
+             if(speech.text==""){
+              currentFieldIndex--;
+             }
             }
             result.innerText = speech.text;
             myInput.innerText = speech.text;

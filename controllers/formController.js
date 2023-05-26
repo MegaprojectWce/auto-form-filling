@@ -35,7 +35,8 @@ function insertRecord(req, res) {
     data.save()
         .then(data => {
             console.log(data);
-            res.redirect('/');
+            // res.redirect('/');
+            res.render("form/success");
         }).catch(err => {
             if (err.name == 'ValidationError') {
                 handleValidationError(err, req.body);
