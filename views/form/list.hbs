@@ -35,7 +35,7 @@
       <tbody>
         {{#each list}}
           <tr>
-            <td>{{increment @index}}</td>
+            <td>{{this.SerialNumber}}</td>
             <td> <a href="/{{this._id}}"><i class="fa fa-eye fa-lg" aria-hidden="true"></i></a></td>
             <td>{{this.name}}</td>
             <td>{{this.gender}}</td>
@@ -69,8 +69,3 @@
     </table>
   </div>
 </div>
-
-<script>
-   
-});
-</script>

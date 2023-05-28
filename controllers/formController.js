@@ -76,6 +76,10 @@ function updateRecord(req, res) {
 router.get("/list", (req, res) => {
   FormData.find((err, docs) => {
     if (!err) {
+        docs.forEach((doc, index) => {
+            docs[index].SerialNumber = index + 1;
+          });
+          
       res.render("form/list", {
         list: docs,
       });
