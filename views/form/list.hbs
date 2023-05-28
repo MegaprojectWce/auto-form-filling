@@ -4,10 +4,11 @@
       Add New</a>
     Submitted Responses</h3>
   <div class="table-responsive">
-    <table class="table table-striped" style="width: fit-content;">
+    <table class="table table-bordered table-hover" style="width: fit-content;">
       <thead>
         <tr>
           <th>Sr.no.</th>
+          <th>View</th>
           <th>Name</th>
           <th>Gender</th>
           <th>Birth Date</th>
@@ -35,6 +36,8 @@
         {{#each list}}
              {{var i=1}}
           <tr>
+            <td>{{i}}</td>
+            <td> <a href="/{{this._id}}"><i class="fa fa-eye fa-lg" aria-hidden="true"></i></a></td>
             <td>{{this.name}}</td>
             <td>{{this.gender}}</td>
             <td>{{this.birthdate}}</td>
@@ -56,7 +59,6 @@
             <td>{{this.languagemediumforexaminationforpaper6andpaper7}}</td>
             <td>{{this.doyouhailfromArunachalPradeshManipur}}</td>
             <td>
-               <a href="/{{this._id}}"><i class="fa fa-eye fa-lg" aria-hidden="true"></i></a>
               <a
                 href="/delete/{{this._id}}"
                 onclick="return confirm('Are you sure to delete this record ?');"
