@@ -40,25 +40,25 @@ var formSchema = new mongoose.Schema({
   education: {
     type: String,
   },
-  graduation: {
+  degreesubjectingraduation: {
     type: String,
   },
   graduationpercentage: {
     type: String,
   },
-  examination: {
+  examinationyouliketobeconsidered: {
     type: String,
   },
-  attempts: {
+  numberofattempts: {
     type: String,
   },
-  onetofive: {
+  languagemediumforexaminationforpaper1topaper5: {
     type: String,
   },
-  sixandseven: {
+  languagemediumforexaminationforpaper6andpaper7: {
     type: String,
   },
-  apradesh: {
+  doyouhailfromArunachalPradeshManipur: {
     type: String,
   },
 });
