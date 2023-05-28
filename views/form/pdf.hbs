@@ -1,84 +1,141 @@
+
+
+
+
 <div class="container mt-5">
+  <button class="btn btn-primary mb-5" id="savePdfButton" onclick= >Save as PDF</button>
 
-<table class="table table-bordered table-hover">
+  <table class="table table-bordered table-hover">
 
-  <tbody>
-    <tr>
-      <td class="col-2">Name</td>
-      <td class="col-4">{{data.name}}</td>
-    </tr>
-    <tr>
-      <td class="col-2">Gender</td>
-      <td class="col-4">{{data.gender}}</td>
-    </tr>
-    <tr>
-      <td class="col-2">Fathername</td>
-      <td class="col-4">{{data.fathername}}</td>
-    </tr>
-    <tr>
-      <td class="col-2">Mothername</td>
-      <td class="col-4">{{data.mothername}}</td>
-    </tr>
-    <tr>
-      <td class="col-2">Minority</td>
-      <td class="col-4">{{data.minority}}</td>
-    </tr>
-    <tr>
-      <td class="col-2">Email</td>
-      <td class="col-4">{{data.email}}</td>
-    </tr>
-    <tr>
-      <td class="col-2">Mobile</td>
-      <td class="col-4">{{data.mobile}}</td>
-    </tr>
-    <tr>
-      <td class="col-2">Nationality</td>
-      <td class="col-4">{{data.nationality}}</td>
-    </tr>
-    <tr>
-      <td class="col-2">Maritalstatus</td>
-      <td class="col-4">{{data.maritalstatus}}</td>
-    </tr>
-    <tr>
-      <td class="col-2">Community</td>
-      <td class="col-4">{{data.community}}</td>
-    </tr>
-    <tr>
-      <td class="col-2">Address</td>
-      <td class="col-4">{{data.address}}</td>
-    </tr>
-    <tr>
-      <td class="col-2">Education</td>
-      <td class="col-4">{{data.education}}</td>
-    </tr>
-    <tr>
-      <td class="col-2">Degree Subject in Graduation</td>
-      <td class="col-4">{{data.degreesubjectingraduation}}</td>
-    </tr>
-    <tr>
-      <td class="col-2">Percentage at graduation level</td>
-      <td class="col-4">{{data.graduationpercentage}}</td>
-    </tr>
-    <tr>
-      <td class="col-2">Examination Details</td>
-      <td class="col-4">{{data.examinationyouliketobeconsidered}}</td>
-    </tr>
-    <tr>
-      <td class="col-2">Number of Attempts already made in Civil Services</td>
-      <td class="col-4">{{data.numberofattempts}}</td>
-    </tr>
-    <tr>
-      <td class="col-2">Language medium for Examination for paper 1 to paper 5</td>
-      <td class="col-4">{{data.languagemediumforexaminationforpaper1topaper5}}</td>
-    </tr>
-    <tr>
-      <td class="col-2">Language medium for Examination for paper 6 and paper 7</td>
-      <td class="col-4">{{data.languagemediumforexaminationforpaper6andpaper7}}</td>
-    </tr>
-    <tr>
-      <td class="col-2">Do you hail from Arunachal Pradesh/Manipur/Meghalaya</td>
-      <td class="col-4">{{data.doyouhailfromArunachalPradeshManipur}}</td>
-    </tr>
-  </tbody>
-</table>
-</div>  
+    <tbody>
+      <tr>
+        <td class="col-2">Name</td>
+        <td class="col-4">{{data.name}}</td>
+      </tr>
+      <tr>
+        <td class="col-2">Gender</td>
+        <td class="col-4">{{data.gender}}</td>
+      </tr>
+      <tr>
+        <td class="col-2">Fathername</td>
+        <td class="col-4">{{data.fathername}}</td>
+      </tr>
+      <tr>
+        <td class="col-2">Mothername</td>
+        <td class="col-4">{{data.mothername}}</td>
+      </tr>
+      <tr>
+        <td class="col-2">Minority</td>
+        <td class="col-4">{{data.minority}}</td>
+      </tr>
+      <tr>
+        <td class="col-2">Email</td>
+        <td class="col-4">{{data.email}}</td>
+      </tr>
+      <tr>
+        <td class="col-2">Mobile</td>
+        <td class="col-4">{{data.mobile}}</td>
+      </tr>
+      <tr>
+        <td class="col-2">Nationality</td>
+        <td class="col-4">{{data.nationality}}</td>
+      </tr>
+      <tr>
+        <td class="col-2">Maritalstatus</td>
+        <td class="col-4">{{data.maritalstatus}}</td>
+      </tr>
+      <tr>
+        <td class="col-2">Community</td>
+        <td class="col-4">{{data.community}}</td>
+      </tr>
+      <tr>
+        <td class="col-2">Address</td>
+        <td class="col-4">{{data.address}}</td>
+      </tr>
+      <tr>
+        <td class="col-2">Education</td>
+        <td class="col-4">{{data.education}}</td>
+      </tr>
+      <tr>
+        <td class="col-2">Degree Subject in Graduation</td>
+        <td class="col-4">{{data.degreesubjectingraduation}}</td>
+      </tr>
+      <tr>
+        <td class="col-2">Percentage at graduation level</td>
+        <td class="col-4">{{data.graduationpercentage}}</td>
+      </tr>
+      <tr>
+        <td class="col-2">Examination Details</td>
+        <td class="col-4">{{data.examinationyouliketobeconsidered}}</td>
+      </tr>
+      <tr>
+        <td class="col-2">Number of Attempts already made in Civil Services</td>
+        <td class="col-4">{{data.numberofattempts}}</td>
+      </tr>
+      <tr>
+        <td class="col-2">Language medium for Examination for paper 1 to paper 5</td>
+        <td
+          class="col-4"
+        >{{data.languagemediumforexaminationforpaper1topaper5}}</td>
+      </tr>
+      <tr>
+        <td class="col-2">Language medium for Examination for paper 6 and paper
+          7</td>
+        <td
+          class="col-4"
+        >{{data.languagemediumforexaminationforpaper6andpaper7}}</td>
+      </tr>
+      <tr>
+        <td class="col-2">Do you hail from Arunachal Pradesh/Manipur/Meghalaya</td>
+        <td class="col-4">{{data.doyouhailfromArunachalPradeshManipur}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+
+
+<script>
+
+  function saveAsPDF() {
+  // Get the HTML content of the page.
+  var html = document.documentElement.innerHTML;
+
+  // Create a new jsPDF object.
+  var pdf = new jsPDF();
+
+  // Add the HTML content to the PDF.
+  pdf.fromHTML(html);
+
+  // Save the PDF file.
+  pdf.save('my-page.pdf');
+}
+   document.addEventListener('DOMContentLoaded', function() {
+    // Get the button element
+    var savePdfButton = document.getElementById('savePdfButton');
+    var navigationBar = document.getElementById('navBar');
+
+    // Attach a click event listener to the button
+    savePdfButton.addEventListener('click', function() {
+       savePdfButton.remove();
+       navigationBar.remove();
+      // Create a new jsPDF instance
+      var doc = new jspdf.jsPDF();
+
+      // Get the HTML content of the whole webpage
+      var html = document.documentElement;
+ html2canvas(html).then(function(canvas) {
+        var imageData = canvas.toDataURL('image/jpeg');
+
+        // Add the image to the PDF document
+        doc.addImage(imageData, 'JPEG', 0, 0, doc.internal.pageSize.getWidth(), doc.internal.pageSize.getHeight());
+
+        // Save the PDF file
+        doc.save('webpage.pdf');
+
+        // Remove the button from the webpage
+        savePdfButton.remove();
+      });
+    });
+  });
+</script>
