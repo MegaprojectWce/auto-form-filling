@@ -1,6 +1,14 @@
 
 
 
+<style>
+    .heading{
+        font-weight: 500;
+    }
+    .table-bordered td, .table-bordered th {
+    border: 1px solid #5b93ca;
+}
+</style>
 
 <div class="container mt-5">
   <button class="btn btn-primary mb-5" id="savePdfButton" onclick= >Save as PDF</button>
@@ -8,85 +16,95 @@
   <table class="table table-bordered table-hover">
 
     <tbody>
+       <thead style="background-color: #5b93ca;">
+        <th>Personal Details</th>
+       </thead> 
       <tr>
-        <td class="col-2">Name</td>
+        <td class="col-2 heading">Name</td>
         <td class="col-4">{{data.name}}</td>
       </tr>
       <tr>
-        <td class="col-2">Gender</td>
+        <td class="col-2 heading">Gender</td>
         <td class="col-4">{{data.gender}}</td>
       </tr>
       <tr>
-        <td class="col-2">Fathername</td>
+        <td class="col-2 heading">Birth Date</td>
+        <td class="col-4">{{data.birthdate}}</td>
+      </tr>
+      <tr>
+        <td class="col-2 heading">Fathername</td>
         <td class="col-4">{{data.fathername}}</td>
       </tr>
       <tr>
-        <td class="col-2">Mothername</td>
+        <td class="col-2 heading">Mothername</td>
         <td class="col-4">{{data.mothername}}</td>
       </tr>
       <tr>
-        <td class="col-2">Minority</td>
+        <td class="col-2 heading">Minority</td>
         <td class="col-4">{{data.minority}}</td>
       </tr>
       <tr>
-        <td class="col-2">Email</td>
+        <td class="col-2 heading">Email</td>
         <td class="col-4">{{data.email}}</td>
       </tr>
       <tr>
-        <td class="col-2">Mobile</td>
+        <td class="col-2 heading">Mobile</td>
         <td class="col-4">{{data.mobile}}</td>
       </tr>
       <tr>
-        <td class="col-2">Nationality</td>
+        <td class="col-2 heading">Nationality</td>
         <td class="col-4">{{data.nationality}}</td>
       </tr>
       <tr>
-        <td class="col-2">Maritalstatus</td>
+        <td class="col-2 heading">Maritalstatus</td>
         <td class="col-4">{{data.maritalstatus}}</td>
       </tr>
       <tr>
-        <td class="col-2">Community</td>
+        <td class="col-2 heading">Community</td>
         <td class="col-4">{{data.community}}</td>
       </tr>
       <tr>
-        <td class="col-2">Address</td>
+        <td class="col-2 heading">Address</td>
         <td class="col-4">{{data.address}}</td>
       </tr>
+        <thead style="background-color: #5b93ca;">
+        <th>Educational Details</th>
+       </thead> 
       <tr>
-        <td class="col-2">Education</td>
+        <td class="col-2 heading">Education</td>
         <td class="col-4">{{data.education}}</td>
       </tr>
       <tr>
-        <td class="col-2">Degree Subject in Graduation</td>
+        <td class="col-2 heading">Degree Subject in Graduation</td>
         <td class="col-4">{{data.degreesubjectingraduation}}</td>
       </tr>
       <tr>
-        <td class="col-2">Percentage at graduation level</td>
+        <td class="col-2 heading">Percentage at graduation level</td>
         <td class="col-4">{{data.graduationpercentage}}</td>
       </tr>
       <tr>
-        <td class="col-2">Examination Details</td>
+        <td class="col-2 heading">Examination Details</td>
         <td class="col-4">{{data.examinationyouliketobeconsidered}}</td>
       </tr>
       <tr>
-        <td class="col-2">Number of Attempts already made in Civil Services</td>
+        <td class="col-2 heading">Number of Attempts already made in Civil Services</td>
         <td class="col-4">{{data.numberofattempts}}</td>
       </tr>
       <tr>
-        <td class="col-2">Language medium for Examination for paper 1 to paper 5</td>
+        <td class="col-2 heading">Language medium for Examination for paper 1 to paper 5</td>
         <td
           class="col-4"
         >{{data.languagemediumforexaminationforpaper1topaper5}}</td>
       </tr>
       <tr>
-        <td class="col-2">Language medium for Examination for paper 6 and paper
+        <td class="col-2 heading">Language medium for Examination for paper 6 and paper
           7</td>
         <td
           class="col-4"
         >{{data.languagemediumforexaminationforpaper6andpaper7}}</td>
       </tr>
       <tr>
-        <td class="col-2">Do you hail from Arunachal Pradesh/Manipur/Meghalaya</td>
+        <td class="col-2 heading">Do you hail from Arunachal Pradesh/Manipur/Meghalaya</td>
         <td class="col-4">{{data.doyouhailfromArunachalPradeshManipur}}</td>
       </tr>
     </tbody>

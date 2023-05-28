@@ -7,7 +7,7 @@ var formSchema = new mongoose.Schema({
   gender: {
     type: String,
   },
-  birthDate: {
+  birthdate: {
     type: String,
   },
   fathername: {
