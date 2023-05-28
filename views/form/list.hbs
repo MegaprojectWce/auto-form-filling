@@ -1,57 +1,67 @@
 <div class="container mt-5">
 
-<h3><a class="btn btn-secondary" href="/"><i class="fa fa-plus"></i> Add New</a> Submitted Responses</h3>
-<div class="table-responsive">
-<table class="table table-striped" style="width: fit-content;">
-    <thead>
+  <h3><a class="btn btn-secondary" href="/"><i class="fa fa-plus"></i>
+      Add New</a>
+    Submitted Responses</h3>
+  <div class="table-responsive">
+    <table class="table table-striped" style="width: fit-content;">
+      <thead>
         <tr>
-            <th>Name</th>
-            <th>Gender</th>
-            <th>Birth Date</th>
-            <th>Fathers name</th>
-            <th>Mothers name</th>
-            <th>Do you belong to minority</th>
-            <th>Mobile No.</th>
-            <th>Email</th>
-            <th>Nationality</th>
-            <th>Marital Status</th>
-            <th>Community</th>
-            <th>Address</th>
-            <th>Education</th>
-            <th>State</th>
-            <th>Degree Subject in Graduation</th>
-            <th>For which examination you like to be considered</th>
-            <th>Number of Attempts already made in Civil Services</th>
-            <th>Language medium for Examination for paper 1 to paper 5</th>
-            <th>Language medium for Examination for paper 6 and paper 7</th>
-            <th>Do you hail from Arunachal Pradesh/Manipur/Meghalaya</th>
+          <th>Name</th>
+          <th>Gender</th>
+          <th>Birth Date</th>
+          <th>Fathers name</th>
+          <th>Mothers name</th>
+          <th>Do you belong to minority</th>
+          <th>Email</th>
+          <th>Mobile No.</th>
+          <th>Nationality</th>
+          <th>Marital Status</th>
+          <th>Community</th>
+          <th>Address</th>
+          <th>Education</th>
+          <th>Degree Subject in Graduation</th>
+          <th>Percentage at graduation level</th>
+          <th>For which examination you like to be considered</th>
+          <th>Number of Attempts already made in Civil Services</th>
+          <th>Language medium for Examination for paper 1 to paper 5</th>
+          <th>Language medium for Examination for paper 6 and paper 7</th>
+          <th>Do you hail from Arunachal Pradesh/Manipur/Meghalaya</th>
         </tr>
-    </thead>
-    <tbody>
+      </thead>
+      <tbody>
         {{#each list}}
-        <tr>
+          <tr>
             <td>{{this.name}}</td>
-            <td>{{this.email}}</td>
-            <td>{{this.mobile}}</td>
-            <td>{{this.birth-date}}</td>
             <td>{{this.gender}}</td>
+            <td>{{this.birthdate}}</td>
+            <td>{{this.fathername}}</td>
+            <td>{{this.mothername}}</td>
+            <td>{{this.minority}}</td>
+            <td>{{this.email}}</td>
+            <td>{{this.nationality}}</td>
+            <td>{{this.maritalstatus}}</td>
+            <td>{{this.mobile}}</td>
+            <td>{{this.community}}</td>
             <td>{{this.address}}</td>
-            <td>{{this.city}}</td>
-            <td>{{this.pinCode}}</td>
-            <td>{{this.state}}</td>
-            <td>{{this.country}}</td>
-            <td>{{this.twelthPercentage}}</td>
-            <td>{{this.mhtCetPercentile}}</td>
-            <td>{{this.branchPreferance1}}</td>
-            <td>{{this.branchPreferance2}}</td>
-            <td>{{this.branchPreferance3}}</td>
+            <td>{{this.education}}</td>
+            <td>{{this.degreesubjectingraduation}}</td>
+            <td>{{this.graduationpercentage}}</td>
+            <td>{{this.examinationyouliketobeconsidered}}</td>
+            <td>{{this.numberofattempts}}</td>
+            <td>{{this.languagemediumforexaminationforpaper1topaper5}}</td>
+            <td>{{this.languagemediumforexaminationforpaper6andpaper7}}</td>
+            <td>{{this.doyouhailfromArunachalPradeshManipur}}</td>
             <td>
-                {{!-- <a href="/{{this._id}}"><i class="fa fa-pencil fa-lg" aria-hidden="true"></i></a> --}}
-                <a href="/delete/{{this._id}}" onclick="return confirm('Are you sure to delete this record ?');"><i class="fa fa-trash fa-lg" aria-hidden="true"></i></a>
+              {{!-- <a href="/{{this._id}}"><i class="fa fa-pencil fa-lg" aria-hidden="true"></i></a> --}}
+              <a
+                href="/delete/{{this._id}}"
+                onclick="return confirm('Are you sure to delete this record ?');"
+              ><i class="fa fa-trash fa-lg" aria-hidden="true"></i></a>
             </td>
-        </tr>
+          </tr>
         {{/each}}
-    </tbody>
-</table>
-</div>
+      </tbody>
+    </table>
+  </div>
 </div>
