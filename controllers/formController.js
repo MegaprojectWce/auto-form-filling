@@ -99,12 +99,11 @@ function handleValidationError(err, body) {
 }
 
 router.get('/:id', (req, res) => {
-    FormData.findById(req.params.id, (err, doc) => {
-        // console.log(doc.city);
+    FormData.findById(req.params.id, (err, data) => {
+        console.log("data",data);
         if (!err) {
-            res.render("form/addOrEdit", {
-                viewTitle: "Update Employee",
-                employee: doc
+            res.render("form/pdf", {
+                data: data
             });
         }
     }).lean();
