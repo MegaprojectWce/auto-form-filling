@@ -1,3 +1,4 @@
+
 <div class="container mt-5">
 
   <h3><a class="btn btn-secondary" href="/"><i class="fa fa-plus"></i>
@@ -32,11 +33,9 @@
         </tr>
       </thead>
       <tbody>
-       
         {{#each list}}
-             {{var i=1}}
           <tr>
-            <td>{{i}}</td>
+            <td>{{increment @index}}</td>
             <td> <a href="/{{this._id}}"><i class="fa fa-eye fa-lg" aria-hidden="true"></i></a></td>
             <td>{{this.name}}</td>
             <td>{{this.gender}}</td>
@@ -70,3 +69,8 @@
     </table>
   </div>
 </div>
+
+<script>
+   
+});
+</script>
